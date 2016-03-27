@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Phaontom - AngularJS</title>
+    <link data-require="font-awesome@*" data-semver="4.2.0" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css" />
+    <link data-require="bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" />
+    <script data-require="bootstrap@*" data-semver="3.2.0" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.2.x" src="//code.angularjs.org/1.2.25/angular.js" data-semver="1.2.25"></script>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" ng-class='{"active": dock_state=="expand"}' ng-click='dock_expand()'>
+                <div class="icon icon-dock-expand"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#" ng-class='{"active": dock_state=="restore"}' ng-click='dock_restore()'>
+                <div class="icon icon-dock-restore"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#" ng-class='{"active": dock_state=="collapse"}' ng-click='dock_collapse()'>
+                <div class="icon icon-dock-collapse"></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+      
+    <div class="main">
+      <div class='element element-empty'>
+        <div class='header header-empty'>Title</div>
+        <div class='body body-empty'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis dapibus lorem vitae varius. Mauris fermentum orci non enim laoreet posuere. Aenean vitae mollis orci, at fermentum turpis. Aliquam vestibulum placerat dui nec mattis. Morbi porttitor et ante id pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse aliquam dapibus tincidunt. Donec eget urna viverra, rhoncus libero vitae, pellentesque orci. In commodo congue dapibus. Phasellus sagittis rhoncus lacus, sit amet sagittis urna vulputate bibendum. Pellentesque id imperdiet mi, eget suscipit justo. Sed efficitur eu lorem vitae maximus. Maecenas vestibulum dictum tellus et pulvinar. Sed libero massa, placerat id justo a, sodales vulputate mauris.
+          <br />
+          <br />
+        
+          <div class='element'>
+            <div class='header'>Title</div>
+            <div class='body'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis dapibus lorem vitae varius. Mauris fermentum orci non enim laoreet posuere. Aenean vitae mollis orci, at fermentum turpis. Aliquam vestibulum placerat dui nec mattis. Morbi porttitor et ante id pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse aliquam dapibus tincidunt. Donec eget urna viverra, rhoncus libero vitae, pellentesque orci. In commodo congue dapibus. Phasellus sagittis rhoncus lacus, sit amet sagittis urna vulputate bibendum. Pellentesque id imperdiet mi, eget suscipit justo. Sed efficitur eu lorem vitae maximus. Maecenas vestibulum dictum tellus et pulvinar. Sed libero massa, placerat id justo a, sodales vulputate mauris.
+            </div>
+          </div>
+          
+          <div class='element'>
+            <div class='header'>Title</div>
+            <div class='body'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis dapibus lorem vitae varius. Mauris fermentum orci non enim laoreet posuere. Aenean vitae mollis orci, at fermentum turpis. Aliquam vestibulum placerat dui nec mattis. Morbi porttitor et ante id pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse aliquam dapibus tincidunt. Donec eget urna viverra, rhoncus libero vitae, pellentesque orci. In commodo congue dapibus. Phasellus sagittis rhoncus lacus, sit amet sagittis urna vulputate bibendum. Pellentesque id imperdiet mi, eget suscipit justo. Sed efficitur eu lorem vitae maximus. Maecenas vestibulum dictum tellus et pulvinar. Sed libero massa, placerat id justo a, sodales vulputate mauris.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dock dock-restore" ng-class='{
+         "dock-restore":!dock_state || dock_state=="restore"
+        ,"dock-collapse":dock_state=="collapse"
+        ,"dock-expand":dock_state=="expand"
+      }'>
+        <div class='element element-empty'>
+          <div class='header header-empty'>Title</div>
+          <div class='body body-empty'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam facilisis dapibus lorem vitae varius. Mauris fermentum orci non enim laoreet posuere. Aenean vitae mollis orci, at fermentum turpis. Aliquam vestibulum placerat dui nec mattis. Morbi porttitor et ante id pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse aliquam dapibus tincidunt. Donec eget urna viverra, rhoncus libero vitae, pellentesque orci. In commodo congue dapibus. Phasellus sagittis rhoncus lacus, sit amet sagittis urna vulputate bibendum. Pellentesque id imperdiet mi, eget suscipit justo. Sed efficitur eu lorem vitae maximus. Maecenas vestibulum dictum tellus et pulvinar. Sed libero massa, placerat id justo a, sodales vulputate mauris.
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+
+</html>

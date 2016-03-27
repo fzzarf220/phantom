@@ -1,0 +1,156 @@
+
+/*********************************
+  Icon
+ *********************************/
+.icon {
+  display: block;
+  width: 15px;
+  height: 13px;
+  border: 1px solid silver;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+ .icon.icon-dock-collapse::before
+,.icon.icon-dock-expand::before
+,.icon.icon-dock-restore::before{
+  content: "M";
+  position: absolute;
+  color: transparent;
+  display: block;
+  right: 0px;
+  background: silver;
+  height: 100%;
+}
+
+.icon.icon-dock-collapse::before {
+  width: 15%;
+}
+
+.icon.icon-dock-restore::before {
+  width: 40%;
+}
+
+.icon.icon-dock-expand::before {
+  width: 65%;
+}
+
+
+.icon:hover {
+  border-color: gray;
+}
+
+.icon:hover::before {
+  background-color: gray;
+}
+
+ .active .icon
+,.active .icon:hover {
+  cursor: default;
+  border-color: #0099FF;
+  opacity: 1;
+}
+
+.active .icon::before {
+  background-color: #0099FF;
+}
+
+/*********************************
+  Dock 
+ *********************************/
+.dock {
+  position: fixed;
+  right: 0px;
+  top: 50px;
+  bottom: 0px;
+  background: #EFEFEF;
+  background: #20272E;
+  box-shadow: -5px 5px 10px rgba(0,0,0,.8);
+  
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: black;
+  
+  transition: width 250ms ease-out 200ms, background 0s ease 400ms;
+}
+
+.dock.dock-collapse {
+  width: 60px;
+  background: black;
+  border-left: 1px solid rgba(100,100,100,.1);
+}
+
+.dock.dock-collapse > .element .body {
+  display: none;
+}
+
+.dock.dock-collapse > .element .header {
+  transform: rotate(90deg);
+}
+
+.dock.dock-restore {
+  width: 430px;
+}
+
+.dock.dock-expand {
+  width: 890px;
+}
+
+/*********************************
+  Main
+ *********************************/
+.main {
+  position: absolute;
+  top: 50px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  background: #021423;
+  background: #05131E;
+  color: white;
+  padding-right: 60px;
+  overflow: auto;
+}
+
+/*********************************
+  Container
+ *********************************/
+ .element {
+   box-shadow: 0px 5px 10px rgba(0,0,0,.8);
+   padding: 0px;
+   margin-bottom: 40px;
+ }
+ 
+ .element.element-empty {
+   box-shadow: none;
+ }
+ 
+ .element .header {
+   background: #0F2F48;
+   color: rgba(255,255,255,.8);
+   font-size: 20pt;
+   line-height: 40pt;
+   padding: 0px 20px;
+ }
+ 
+ .element .header.header-empty {
+   background: transparent;
+ }
+ 
+ .element .body {
+   padding: 10px 20px 40px 20px;
+   background: white;
+   color: initial;
+ }
+ 
+ .element .body.body-empty {
+   background: transparent;
+   color: white;
+ }
+ 
+ 
+ 
+ 
+ 
